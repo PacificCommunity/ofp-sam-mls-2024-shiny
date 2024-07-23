@@ -2,7 +2,7 @@
 # 2022-04-21  Finlay Scott created for SKJ stepwise development
 # 2022-09-01  Arni Magnusson adapted for YFT review
 # 2023-04-07  Arni Magnusson and Jemery Day adapted for YFT and BET
-setwd("C:/git/PacificCommunity/ofp-sam/bet-2023-shiny/app")
+setwd("C:/git/PacificCommunity/ofp-sam/ofp-sam-mls-2024-shiny/app")
 
 # CRAN packages
 library(shiny)
@@ -893,7 +893,7 @@ server <- function(input, output){
     if(length(areas) < 1 || length(models) < 1){
       return()
     }
-    pdat <- biomass_dat[model %in% models & area %in% areas, ]
+    pdat <- biomass_dat[model %in% models,]# & area %in% areas, ]
     model_cols <- get_model_colours(all_model_names=all_models, chosen_model_names=models)
     p <- ggplot(pdat, aes(x=year, y=SBSBF0))
     p <- p + geom_line(aes(colour=model), linewidth=0.75)    # was 1.25
