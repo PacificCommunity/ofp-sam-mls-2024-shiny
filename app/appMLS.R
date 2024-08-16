@@ -111,11 +111,11 @@ ll_offset[, Penalties := round(Penalties)]
 ll_offset[, Gradient := sprintf("%.5f", Gradient)]
 
 # Format the status table
-status_tab_dat[, `Final SB/SBF0instant` := .(signif(`Final SB/SBF0instant`, 3))]
-status_tab_dat[, `Final SB/SBF0recent` := .(signif(`Final SB/SBF0recent`, 3))]
-status_tab_dat[, `SBrecent/SBmsy` := .(signif(`SBrecent/SBmsy`, 3))]
-status_tab_dat[, `Frecent/Fmsy` := .(signif(`Frecent/Fmsy`, 3))]
-status_tab_dat[, `FMSY` := .(signif(`FMSY`, 3))]
+status_tab_dat[, `Final SB/SBF0instant` := .(formatC(`Final SB/SBF0instant`, format="f", digits=3))]
+status_tab_dat[, `Final SB/SBF0recent` := .(formatC(`Final SB/SBF0recent`, format="f", digits=3))]
+status_tab_dat[, `SBrecent/SBmsy` := .(formatC(`SBrecent/SBmsy`, format="f", digits=3))]
+status_tab_dat[, `Frecent/Fmsy` := .(formatC(`Frecent/Fmsy`, format="f", digits=3))]
+status_tab_dat[, `FMSY` := .(formatC(`FMSY`, format="f", digits=3))]
 
 #---------------------------------------------------------------------------
 # App options
