@@ -2,7 +2,7 @@
 # 2022-04-21  Finlay Scott created for SKJ stepwise development
 # 2022-09-01  Arni Magnusson adapted for YFT review
 # 2023-04-07  Arni Magnusson and Jemery Day adapted for YFT and BET
-setwd("C:/git/PacificCommunity/ofp-sam/ofp-sam-mls-2024-shiny/app")
+# setwd("C:/git/PacificCommunity/ofp-sam/ofp-sam-mls-2024-shiny/app")
 
 # CRAN packages
 library(shiny)
@@ -113,8 +113,8 @@ ll_offset[, Gradient := sprintf("%.5f", Gradient)]
 # Format the status table
 status_tab_dat[, `Final SB/SBF0instant` := .(signif(`Final SB/SBF0instant`, 3))]
 status_tab_dat[, `Final SB/SBF0recent` := .(signif(`Final SB/SBF0recent`, 3))]
-status_tab_dat[, `SB/SBF0 (2012)` := .(signif(`SB/SBF0 (2012)`, 3))]
-# status_tab_dat[, `Final SB/SBF0latest` := .(signif(`Final SB/SBF0latest`, 3))]
+status_tab_dat[, `SBrecent/SBmsy` := .(signif(`SBrecent/SBmsy`, 3))]
+status_tab_dat[, `Frecent/Fmsy` := .(signif(`Frecent/Fmsy`, 3))]
 status_tab_dat[, `FMSY` := .(signif(`FMSY`, 3))]
 
 #---------------------------------------------------------------------------
