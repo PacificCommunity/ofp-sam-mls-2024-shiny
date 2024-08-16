@@ -281,11 +281,13 @@ for (model in models){
   # Summary table
   sbsbf0 <- as.numeric(SBSBF0(rep))
   sbsbf0recent <- as.numeric(SBSBF0recent(rep))
+  sbrecentbmsy <- as.numeric(SBrecent(rep)) / BMSY(rep)
+  ffmsy <- as.numeric(FFMSY_ts(rep))
   status_tab <- data.table(
     "Final SB/SBF0instant" = tail(sbsbf0, 1),
     "Final SB/SBF0recent" = tail(sbsbf0recent, 1),
-    "SB/SBF0 (2012)" = as.numeric(SBSBF0(rep)[,"2012"]),
-    #    "Final SB/SBF0latest" = tail(sbsbf0latest, 1),    
+    "SBrecent/SBmsy" = tail(sbrecentbmsy, 1),
+    "Frecent/Fmsy" = mean(head(tail(ffmsy, 5), 4)),
     MSY = MSY(rep),
     BMSY=BMSY(rep),
     FMSY=FMSY(rep))
